@@ -12,7 +12,6 @@ public class MoldPanel : MonoBehaviour
 
     public bool usingRingMould2, usingRingMould3, usingRingMould1;
 
-    public 
 
     void Start()
     {
@@ -33,7 +32,9 @@ public class MoldPanel : MonoBehaviour
     {
         
     }
+    
 
+    #region Ring Moulds
     public void RingMould2()
     {
         usingRingMould3 = false;
@@ -74,11 +75,11 @@ public class MoldPanel : MonoBehaviour
         ringMould1.enabled = false;
         ringMould1Tick.enabled = false;
 
-        usingRingMould3 = true;
+        usingRingMould3 = true; 
         ringMould3.enabled = true;
         ringMould3Tick.enabled = true;
     }
-
+    #endregion 
     public void Continue()
     {
         if (usingRingMould2 == true || usingRingMould3 == true || usingRingMould1 == true)
