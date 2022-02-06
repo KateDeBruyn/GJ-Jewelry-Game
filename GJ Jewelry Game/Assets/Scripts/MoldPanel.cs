@@ -7,10 +7,10 @@ public class MoldPanel : MonoBehaviour
 {
     public GameObject smeltPanel;
 
-    public Image plainRingImg, detailRingImg;
-    public Image plainRingTick, detailRingTick;
+    public Image ringMould1,ringMould2, ringMould3;
+    public Image ringMould2Tick, ringMould3Tick, ringMould1Tick;
 
-    public bool usingPlain, usingDetail;
+    public bool usingRingMould2, usingRingMould3, usingRingMould1;
 
     public 
 
@@ -18,12 +18,15 @@ public class MoldPanel : MonoBehaviour
     {
         smeltPanel.SetActive(false);
 
-        plainRingImg.enabled = false;
-        plainRingTick.enabled = false;
-        detailRingImg.enabled = false;
-        detailRingTick.enabled = false;
-        usingPlain = false;
-        usingDetail = false;
+        ringMould1.enabled = false;
+        ringMould1Tick.enabled = false;
+        ringMould2.enabled = false;
+        ringMould2Tick.enabled = false;
+        ringMould3.enabled = false;
+        ringMould3Tick.enabled = false;
+        usingRingMould2 = false;
+        usingRingMould3 = false;
+        usingRingMould1 = false;
     }
 
     void Update()
@@ -31,31 +34,54 @@ public class MoldPanel : MonoBehaviour
         
     }
 
-    public void PlainRing()
+    public void RingMould2()
     {
-        usingDetail = false;
-        detailRingImg.enabled = false;
-        detailRingTick.enabled = false;
+        usingRingMould3 = false;
+        ringMould3.enabled = false;
+        ringMould3Tick.enabled = false;
 
-        usingPlain = true;
-        plainRingImg.enabled = true;
-        plainRingTick.enabled = true;
+        usingRingMould1 = false;
+        ringMould1.enabled = false;
+        ringMould1Tick.enabled = false;
+
+        usingRingMould2 = true;
+        ringMould2.enabled = true;
+        ringMould2Tick.enabled = true;
+    } 
+    public void RingMould1()
+    {
+        usingRingMould3 = false;
+        ringMould3.enabled = false;
+        ringMould3Tick.enabled = false;
+        
+        usingRingMould2 = false;
+        ringMould2.enabled = false;
+        ringMould2Tick.enabled = false;
+
+        usingRingMould1 = true;
+        ringMould1.enabled = true;
+        ringMould1Tick.enabled = true;
     }
 
-    public void DetailedRing()
-    {
-        usingPlain = false;
-        plainRingImg.enabled = false;
-        plainRingTick.enabled = false;
 
-        usingDetail = true;
-        detailRingImg.enabled = true;
-        detailRingTick.enabled = true;
+    public void RingMould3()
+    {
+        usingRingMould2 = false;
+        ringMould2.enabled = false;
+        ringMould2Tick.enabled = false;
+
+        usingRingMould1 = false;
+        ringMould1.enabled = false;
+        ringMould1Tick.enabled = false;
+
+        usingRingMould3 = true;
+        ringMould3.enabled = true;
+        ringMould3Tick.enabled = true;
     }
 
     public void Continue()
     {
-        if (usingPlain == true || usingDetail == true)
+        if (usingRingMould2 == true || usingRingMould3 == true || usingRingMould1 == true)
         {
             smeltPanel.SetActive(true);
         }

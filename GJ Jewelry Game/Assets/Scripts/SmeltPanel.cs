@@ -32,12 +32,12 @@ public class SmeltPanel : MonoBehaviour
 
     void Update()
     {
-        if (moldPanel.usingPlain == true)
+        if (moldPanel.usingRingMould2 == true)
         {
             detRingSelec.enabled = false;
             plainRingSelec.enabled = true;
         }
-        else if (moldPanel.usingDetail == true)
+        else if (moldPanel.usingRingMould3 == true)
         {
             plainRingSelec.enabled = false;
             detRingSelec.enabled = true;
