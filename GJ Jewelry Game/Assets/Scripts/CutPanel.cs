@@ -10,6 +10,8 @@ public class CutPanel : MonoBehaviour
     [SerializeField] private Image whiteGemImg, purpleGemImg, pinkGemImg, finalGemImg, gemCut1, gemCut2, gemCut3;
     [SerializeField] private Image whiteGemTick, purpleGemTick, pinkGemTick, cut1Tick, cut2Tick, cut3Tick;
 
+    [SerializeField] private Animator hammerAnim;
+
     private bool selectedGem, selectedCut;
 
     private int hits = 0;
@@ -163,6 +165,8 @@ public class CutPanel : MonoBehaviour
         gemCut3.enabled = false;
         finalGemImg.enabled = false;
 
+        hammerAnim.SetBool("hammerAnim", true);
+
         switch (hits)
         {
             case 0:
@@ -189,5 +193,7 @@ public class CutPanel : MonoBehaviour
 
         ++hits;
         Debug.Log(hits);
+
+        hammerAnim.SetBool("hammerAnim", true);
     }
 }
