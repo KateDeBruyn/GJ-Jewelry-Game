@@ -140,22 +140,6 @@ public class CutPanel : MonoBehaviour
 
     public void Hammer()
     {
-        /*if(hits == 4)
-        {
-            whiteGemImg.enabled = false;
-            purpleGemImg.enabled = false;
-            pinkGemImg.enabled = false;
-
-            finalGemImg.enabled = true;
-
-            
-            //Debug.Log("enough smashing");
-            
-            //make hammer diappear
-        }else if (hits == 5)
-        {
-            finalPanel.SetActive(true);
-        }*/
 
         whiteGemImg.enabled = false;
         purpleGemImg.enabled = false;
