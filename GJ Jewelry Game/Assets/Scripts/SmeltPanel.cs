@@ -10,20 +10,23 @@ public class SmeltPanel : MonoBehaviour
 
     private MoldPanel moldPanel;
 
-    public Image ringMould2Selec, ringMould3Selec, ringMould1Selec;
+    public Image ringMould2Selec, ringMould3Selec, ringMould1Selec, finalMouldRing;
     public Image goldTick, silvTick, copperTick;
+
+    [SerializeField] private Animator smeltAnim;
 
     public bool goldSelected, silvSelected, copperSelected;
 
     void Start()
     {
         moldPanel = gameObject.GetComponent<MoldPanel>();
-
+         
         cutsPanel.SetActive(false);
 
         ringMould2Selec.enabled = false;
         ringMould3Selec.enabled = false;
         ringMould1Selec.enabled = false;
+        finalMouldRing.enabled = false;
         goldTick.enabled = false;
         silvTick.enabled = false;
         copperTick.enabled = false;
@@ -93,6 +96,22 @@ public class SmeltPanel : MonoBehaviour
 
     public void Smelt()
     {
+        //smeltAnim.SetBool("smelt", false);
+
+        finalMouldRing.enabled = true;
+
+        StartCoroutine(move());
+
+
+        /*if (goldSelected == true || silvSelected == true || copperSelected == true)
+        {
+            cutsPanel.SetActive(true);
+        }*/
+    }
+
+    IEnumerator move()
+    {
+        yield return new WaitForSecondsRealtime(2f);
         if (goldSelected == true || silvSelected == true || copperSelected == true)
         {
             cutsPanel.SetActive(true);
