@@ -8,7 +8,7 @@ public class CutPanel : MonoBehaviour
     [SerializeField] private GameObject cutOptionsPanel;
 
     [SerializeField] private Image whiteGemImg, purpleGemImg, pinkGemImg;
-    [SerializeField] private Image whiteGemTick, purpleGemTick, pinkGemTick;
+    [SerializeField] private Image whiteGemTick, purpleGemTick, pinkGemTick, cut1Tick, cut2Tick, cut3Tick;
 
     private bool selectedGem;
 
@@ -25,6 +25,10 @@ public class CutPanel : MonoBehaviour
         pinkGemTick.enabled = false;
         purpleGemTick.enabled = false;
         whiteGemTick.enabled = false;
+
+        cut1Tick.enabled = false;
+        cut2Tick.enabled = false;
+        cut3Tick.enabled = false;
     }
 
     // Update is called once per frame
@@ -40,6 +44,7 @@ public class CutPanel : MonoBehaviour
         }
     }
 
+    #region gems
     public void WhiteGem()
     {
         whiteGemImg.enabled = true;
@@ -76,5 +81,20 @@ public class CutPanel : MonoBehaviour
 
         selectedGem = true;
     }
+    #endregion
 
+    public void Cut1()
+    {
+        cut1Tick.enabled = true;
+    }
+
+    public void Cut2()
+    {
+        cut2Tick.enabled = true;
+    }
+
+    public void Cut3()
+    {
+        cut3Tick.enabled = true;
+    }
 }
