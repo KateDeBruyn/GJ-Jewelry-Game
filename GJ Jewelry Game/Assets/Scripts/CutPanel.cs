@@ -21,6 +21,10 @@ public class CutPanel : MonoBehaviour
         whiteGemImg.enabled = false;
         purpleGemImg.enabled = false;
         pinkGemImg.enabled = false;
+
+        pinkGemTick.enabled = false;
+        purpleGemTick.enabled = false;
+        whiteGemTick.enabled = false;
     }
 
     // Update is called once per frame
