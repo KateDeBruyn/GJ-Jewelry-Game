@@ -7,7 +7,7 @@ public class CutPanel : MonoBehaviour
 {
     [SerializeField] private GameObject cutOptionsPanel, hammerPanel, finalPanel;
 
-    [SerializeField] private Image whiteGemImg, purpleGemImg, pinkGemImg, finalGemImg;
+    [SerializeField] private Image whiteGemImg, purpleGemImg, pinkGemImg, finalGemImg, gemCut1, gemCut2, gemCut3;
     [SerializeField] private Image whiteGemTick, purpleGemTick, pinkGemTick, cut1Tick, cut2Tick, cut3Tick;
 
     private bool selectedGem, selectedCut;
@@ -30,6 +30,10 @@ public class CutPanel : MonoBehaviour
         purpleGemImg.enabled = false;
         pinkGemImg.enabled = false;
         finalGemImg.enabled = false;
+
+        gemCut1.enabled = false;
+        gemCut2.enabled = false;
+        gemCut3.enabled = false;
 
         pinkGemTick.enabled = false;
         purpleGemTick.enabled = false;
@@ -134,7 +138,7 @@ public class CutPanel : MonoBehaviour
 
     public void Hammer()
     {
-        if(hits == 4)
+        /*if(hits == 4)
         {
             whiteGemImg.enabled = false;
             purpleGemImg.enabled = false;
@@ -149,8 +153,40 @@ public class CutPanel : MonoBehaviour
         }else if (hits == 5)
         {
             finalPanel.SetActive(true);
+        }*/
+
+        whiteGemImg.enabled = false;
+        purpleGemImg.enabled = false;
+        pinkGemImg.enabled = false;
+        gemCut1.enabled = false;
+        gemCut2.enabled = false;
+        gemCut3.enabled = false;
+        finalGemImg.enabled = false;
+
+        switch (hits)
+        {
+            case 0:
+            case 1:
+                gemCut1.enabled = true;
+                break; 
+            case 2:
+                gemCut2.enabled = true;
+                break;
+            case 3:
+                gemCut3.enabled = true;
+                break;
+            case 4:
+                finalGemImg.enabled = true;
+                break;
+            case 5:
+                finalPanel.SetActive(true);
+                break;
+            default:
+                Debug.Log("system eroor os sumn");
+                break;
+
         }
-        
+
         ++hits;
         Debug.Log(hits);
     }

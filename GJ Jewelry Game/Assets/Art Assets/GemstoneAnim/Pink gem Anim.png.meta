@@ -104,9 +104,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 520
-        width: 480
-        height: 480
+        y: 500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,10 +124,10 @@ TextureImporter:
       name: Pink gem Anim_1
       rect:
         serializedVersion: 2
-        x: 480
-        y: 520
-        width: 480
-        height: 480
+        x: 570
+        y: 607
+        width: 390
+        height: 393
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,10 +145,10 @@ TextureImporter:
       name: Pink gem Anim_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 40
-        width: 480
-        height: 480
+        x: 148
+        y: 181
+        width: 239
+        height: 229
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
